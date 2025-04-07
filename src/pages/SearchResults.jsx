@@ -20,8 +20,8 @@ const SearchResults = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-5xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+    <div className="min-h-screen bg-gray-100 px-20 py-6">
+      <div className="mx-auto bg-white p-6 rounded-xl shadow-lg">
         <h1 className="text-2xl font-bold text-gray-800 mb-4">Поиск рейсов</h1>
 
         {/* Фильтры */}
