@@ -1,33 +1,122 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaSearch, FaSignInAlt } from "react-icons/fa"; // Импорт иконок
+import { FaTimes, FaSignInAlt } from "react-icons/fa";
+import { BiSupport } from "react-icons/bi";
+import { MdOutlineMenu } from "react-icons/md";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Закрытие меню при клике на ссылку
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <header className="bg-white px-20 py-3 flex justify-between items-center shadow-md">
-      {/* Логотип */}
-      <Link to="/" className="text-2xl font-bold text-orange-500">
-        BusTickets
-      </Link>
+    <header className="bg-white px-4 md:px-20 py-6 flex justify-between items-center relative w-full shadow-2xs">
+      {/* Левая часть: логотип + кнопка меню */} 
+      <div className="flex items-center justify-between md:justify-baseline md:gap-6">
+        <Link to="/" className="text-2xl font-bold text-red-500">
+          <span className="text-black">BUS</span> TicKet
+        </Link>
+      </div>
 
-<div className="flex justify-between space-x-8 font-bold items-center"> 
-        
-        <Link to="/about" className="text-gray-700 hover:text-orange-500">О компании</Link>
-        <Link to="/faq" className="text-gray-700 hover:text-orange-500">FAQ</Link>
-        <Link to="/contact" className="text-gray-700 hover:text-orange-500">Контакты</Link>
+      {/* Правая часть */}
+      <div className="hidden md:flex items-center space-x-6 ">
+        <Link
+          to="/support"
+          className="hidden md:flex items-center gap-2 text-gray-700 hover:text-red-500 transition-colors"
+        >
+          <BiSupport className="text-red-500 text-lg"  />
+          <span className="text-lg">
+            Служба поддержки
+          </span>
+        </Link>
 
+        <Link
+          to="/login"
+          className="flex items-center hover:text-red-600 text-lg"
+        >
+          <FaSignInAlt className="text-red-500 mr-2" /> Личный кабинет
+        </Link>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center gap-2 text-gray-700 text-lg focus:outline-none"
+          aria-label="Меню"
+          aria-expanded={isOpen}
+        >
+          {isOpen ? (
+            <FaTimes className="text-red-500 text-lg"/>
+          ) : (
+            <MdOutlineMenu className="text-red-500 text-lg" />
+          )}
+          Меню
+        </button>
+      </div>
+
+      {/* Выпадающее меню с анимацией */}
+      <div
+        className={`absolute top-full left-0 w-full bg-white shadow-md z-50 transition-all duration-300 overflow-hidden ${
+          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="container mx-auto py-6">
+          <ul className="flex flex-wrap gap-6 text-gray-800">
+            <li>
+              <Link
+                className="hover:text-red-500 text-xl transition-colors block "
+                to="/"
+                onClick={closeMenu}
+              >
+                Главная
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:text-red-500 text-xl transition-colors block"
+                to="/about"
+                onClick={closeMenu}
+              >
+                О компании
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:text-red-500 text-xl transition-colors block "
+                to="/contacts"
+                onClick={closeMenu}
+              >
+                Контакты
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:text-red-500 text-xl transition-colors block "
+                to="/routes"
+                onClick={closeMenu}
+              >
+                Маршруты
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:text-red-500 text-xl transition-colors block "
+                to="/schedule"
+                onClick={closeMenu}
+              >
+                Расписание
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:text-red-500 text-xl transition-colors block "
+                to="/support"
+                onClick={closeMenu}
+              >
+                Поддержка
+              </Link>
+            </li>
+          </ul>
         </div>
-      {/* Навигация */}
-      <nav className="flex space-x-6 items-center">
-        
-       
-        <Link to="/search" className="text-gray-700 hover:text-orange-500 flex items-center">
-          <FaSearch className="mr-2" /> 
-        </Link>
-        <Link to="/login" className="bg-orange-500 text-white px-4 py-2 rounded flex items-center">
-        
-          <FaSignInAlt className="mr-2" /> Войти
-        </Link>
-      </nav>
+      </div>
     </header>
   );
 };
