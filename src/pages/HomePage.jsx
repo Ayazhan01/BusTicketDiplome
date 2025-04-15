@@ -1,13 +1,14 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { FaUserCircle } from "react-icons/fa";
 import { IoTicketOutline } from "react-icons/io5";
 import BusSearchForm from "../components/BusSearchForm";
+import PopularDirections from "../components/PopularDirections";
 
 function HomePage() {
 
-  const [searchResults, setSearchResults] = useState(null);
+  // const [searchResults, setSearchResults] = useState(null);
   return (
-    <div className="min-h-screen bg-white md:px-20 py-10">
+    <div className="min-h-screen bg-white md:px-20 py-10 flex flex-col space-y-30">
       <section className="flex items-center justify-between ">
         <div
           className="flex flex-col max-w-2/4 gap-6"
@@ -35,12 +36,14 @@ function HomePage() {
 
         
 
-        <BusSearchForm/>
+        <div className="flex justify-end"><BusSearchForm/></div>
       </section>
 
+
+      <PopularDirections />
   
 
-      {/* Популярные маршруты */}
+      {/* Популярные маршруты
       <section className="p-12 text-center mb-20">
         <h2 className="text-4xl font-bold mb-10">Популярные маршруты</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -75,7 +78,7 @@ function HomePage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Преимущества сервиса (оранжевый фон) */}
       <section className="p-12 bg-orange-500 text-white text-center rounded-lg mb-20">

@@ -104,7 +104,7 @@ const BusSearchForm = () => {
                 type="text"
                 name="from"
                 placeholder="Город отправления"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
                 value={formData.from}
                 onChange={handleChange}
                 list="cities-from"
@@ -124,7 +124,7 @@ const BusSearchForm = () => {
                 type="text"
                 name="to"
                 placeholder="Город назначения"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
                 value={formData.to}
                 onChange={handleChange}
                 list="cities-to"
@@ -143,7 +143,7 @@ const BusSearchForm = () => {
               <input
                 type="date"
                 name="date"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
                 value={formData.date}
                 onChange={handleChange}
               />
@@ -156,7 +156,7 @@ const BusSearchForm = () => {
                 </label>
                 <select 
                   name="passengers"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
                   value={formData.passengers}
                   onChange={handleChange}
                 >
@@ -174,7 +174,7 @@ const BusSearchForm = () => {
                   type="text"
                   name="promoCode"
                   placeholder="Введите промокод"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
                   value={formData.promoCode}
                   onChange={handleChange}
                 />
@@ -183,7 +183,7 @@ const BusSearchForm = () => {
 
             <button 
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 mt-4"
+              className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 mt-4"
               disabled={isLoading}
             >
               {isLoading ? 'Поиск...' : 'НАЙТИ АВТОБУСЫ'}

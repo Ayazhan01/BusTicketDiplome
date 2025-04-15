@@ -1,0 +1,17 @@
+
+
+/* Добавьте сюда стили для Swiper */
+
+/* Стили для точек пагинации */
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #d1d5db; /* gray-300 */
+    opacity: 1;
+    margin: 0 4px;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #dc2626; /* red-600 */
+    transform: scale(1.2);
+  }
