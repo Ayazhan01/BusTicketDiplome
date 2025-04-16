@@ -290,6 +290,7 @@ import { useState } from 'react';
 import { IoTicketOutline } from 'react-icons/io5';
 import BusSearchForm from '../components/BusSearchForm';
 import PopularDirections from '../components/PopularDirections';
+import BusScheduleByCountries from '../components/BusScheduleByCountries';
 
 const MainBlock = () => {
   const [searchResults, setSearchResults] = useState(null);
@@ -388,6 +389,7 @@ const MainBlock = () => {
       )}
 
         <PopularDirections />
+        <BusScheduleByCountries/>
     </div>
   );
 };
