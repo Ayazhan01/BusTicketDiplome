@@ -1,45 +1,169 @@
-const About = () => {
+import { FaServer, FaCode, FaPalette, FaUsers, FaBus, FaGlobe, FaChartLine, FaMobileAlt } from 'react-icons/fa';
+import MapSection from '../components/MapSection';
+import FAQ from '../components/FAQ';
+const AboutPage = () => {
+  const teamMembers = [
+    {
+      name: "Damir Nurgali",
+      role: "Backend, Базы данных",
+      icon: <FaServer className="text-3xl" />,
+      color: "bg-red-100 text-red-800"
+    },
+    {
+      name: "Yessen Bekbol",
+      role: "Full-Stack разработка",
+      icon: <FaCode className="text-3xl" />,
+      color: "bg-gray-100 text-gray-800"
+    },
+    {
+      name: "Ayazhan Marikova",
+      role: "UX/UI дизайн, Frontend",
+      icon: <FaPalette className="text-3xl" />,
+      color: "bg-red-100 text-red-800"
+    }
+  ];
+
   return (
-    <div className=" bg-gray-100 flex items-center justify-center p-20">
-      <div className=" w-full bg-white p-10 rounded-xl shadow-lg flex flex-col md:flex-row">
-        {/* Блок с изображением */}
-        <div className="md:w-1/3 h-full mb-6 md:mb-0 flex justify-center items-center">
-          <img
-            src="/public/about.jpg"
-            alt="О компании"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
+    <div className="min-h-screen bg-gray-50">
+      {/* Герой секция
+      <section className="bg-[url(/public/about.png)] h-[500px] bg-center text-white py-20 relative overflow-hidden">
+        <div className=" mx-auto px-4 text-center relative z-10 md:px-20">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">О нас</h1>
+          <p className="text-xl max-w-2xl mx-auto">
+            Крупнейший онлайн-сервис по продаже автобусных билетов в Казахстане
+          </p>
+        </div>
+       
+      </section> */}
+
+      {/* О сервисе */}
+      <section className=" mx-auto px-4 py-16">
+        <div className="text-center mb-12 md:px-20">
+          <div className="inline-flex items-center justify-center bg-red-100 text-red-600 rounded-full p-3 mb-4">
+            <FaBus className="text-2xl" />
+          </div>
+          <h2 className="text-3xl font-bold text-gray-800 mb-2">АВТОБУСБИЛЕТ.KZ</h2>
+          <p className="text-gray-600 max-w-3xl mx-auto">
+            Наш сервис был создан в 2025 году с целью сделать покупку автобусных билетов 
+            максимально простой и удобной для жителей Казахстана.
+          </p>
         </div>
 
-        {/* Блок с текстом */}
-        <div className="md:w-2/3 md:pl-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-6">О компании</h1>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Наша компания предоставляет удобный и надежный сервис для покупки
-            билетов на междугородние автобусы. Мы работаем с ведущими
-            перевозчиками, чтобы предложить вам лучшие маршруты по доступным ценам.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 md:px-20">
+          {[
+            {
+              title: "Широкий охват",
+              description: "Сотрудничаем с ведущими автобусными перевозчиками страны",
+              icon: <FaGlobe className="text-4xl mb-4 text-red-600" />
+            },
+            {
+              title: "Простота",
+              description: "Удобное бронирование билетов в любом направлении",
+              icon: <FaMobileAlt className="text-4xl mb-4 text-red-600" />
+            },
+            {
+              title: "Рост",
+              description: "Самый быстроразвивающийся сервис в своей категории",
+              icon: <FaChartLine className="text-4xl mb-4 text-red-600" />
+            }
+          ].map((feature, index) => (
+            <div key={index} className="bg-white p-8 rounded-xl shadow-md text-center  flex flex-col items-center hover:shadow-lg transition-shadow">
+              {feature.icon}
+              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+              <p className="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-          <h2 className="text-xl font-semibold text-gray-800 mb-3">
-            Почему выбирают нас?
-          </h2>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li>Быстрое и удобное бронирование билетов.</li>
-            <li>Широкий выбор маршрутов и перевозчиков.</li>
-            <li>Безопасные и удобные способы оплаты.</li>
-            <li>Круглосуточная поддержка клиентов.</li>
-          </ul>
+      {/* Наша команда */}
+      <section className='relative'>
+      <img src="public/transition.png" className=" rotate-180 absolute top-0" />
+      <div className="bg-gray-100 pt-20  pb-25 ">
+        
+        <div className=" mx-auto px-4 md:px-20">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center bg-red-100 text-red-600 rounded-full p-3 mb-4">
+              <FaUsers className="text-2xl" />
+            </div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Наша команда</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Профессионалы, создающие удобные и технологичные решения для ваших поездок
+            </p>
+          </div>
 
-          <h2 className="text-xl font-semibold text-gray-800 mb-3">Контакты</h2>
-          <p className="text-gray-700">
-            📍 Адрес: г. Алматы, ул. Достык, 150 <br />
-            📞 Телефон: +7 (777) 123-45-67 <br />
-            ✉ Email: support@biletbus.kz
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <div 
+                key={index} 
+                className={`${member.color} rounded-xl p-8 shadow-md hover:shadow-lg transition-shadow flex flex-col items-center`}
+              >
+                <div className="bg-white p-4 rounded-full mb-4 shadow-sm">
+                  {member.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                <p className="text-lg mb-4">{member.role}</p>
+                <div className="flex space-x-4 mt-auto">
+                  <a href="#" className="text-gray-500 hover:text-red-600">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                  </a>
+                  <a href="#" className="text-gray-500 hover:text-blue-400">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                    </svg>
+                  </a>
+                  <a href="#" className="text-gray-500 hover:text-red-500">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+      <img src="public/transition.png" className=" rotate-360 absolute bottom-0" />
+      </section>
+
+      {/* Наши ценности */}
+      <section className=" px-4 md:px-20 py-16">
+        <div className="bg-white rounded-xl shadow-md p-8 md:p-12">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Наши принципы</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Доступность",
+                description: "Мы делаем путешествия доступными для каждого",
+                color: "text-red-600"
+              },
+              {
+                title: "Технологии",
+                description: "Используем современные решения для вашего комфорта",
+                color: "text-gray-600"
+              },
+              {
+                title: "Надежность",
+                description: "Гарантируем безопасность каждой транзакции",
+                color: "text-red-600"
+              }
+            ].map((value, index) => (
+              <div key={index} className="text-center flex flex-col items-center">
+                <div className={`text-5xl font-bold mb-4 ${value.color}`}>0{index + 1}</div>
+                <h3 className="text-xl font-bold mb-2">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <FAQ/>
+      <MapSection/>
+      
     </div>
   );
 };
 
-export default About;
+export default AboutPage;

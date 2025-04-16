@@ -3,51 +3,40 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useEffect, useRef } from "react";
+import { useState } from "react"; // Изменили useRef на useState
 
 const PopularDirections = () => {
   const directions = [
     {
-      from: "Киев",
-      to: "Краков",
-      price: "от 700 грн",
-      image: "/home.jpg",
+      from: "Алматы",
+      to: "Астана",
+      price: "от 5000 ₸",
+      image: "/almaty-astana.webp",
     },
     {
-      from: "Львов",
-      to: "Варшава",
-      price: "от 650 грн",
-      image: "/home.jpg",
+      from: "Шымкент",
+      to: "Тараз",
+      price: "от 2500 ₸",
+      image: "/shymkent-taraz.webp",
     },
     {
-      from: "Одесса",
-      to: "Будапешт",
-      price: "от 900 грн",
-      image: "/home.jpg",
+      from: "Атырау",
+      to: "Актобе",
+      price: "от 6000 ₸",
+      image: "/atyrau-aktobe.webp",
     },
     {
-      from: "Харьков",
-      to: "Прага",
-      price: "от 850 грн",
-      image: "/home.jpg",
+      from: "Костанай",
+      to: "Петропавловск",
+      price: "от 4500 ₸",
+      image: "/kostanay-petropavlovsk.webp",
     },
   ];
 
-  const swiperRef = useRef(null);
-  const activeIndexRef = useRef(0);
-
-  useEffect(() => {
-    if (swiperRef.current) {
-      swiperRef.current.on("slideChange", (swiper) => {
-        activeIndexRef.current = swiper.activeIndex;
-      });
-    }
-  }, []);
+  const [activeIndex, setActiveIndex] = useState(0); // Используем useState вместо useRef
 
   return (
-    <div className="flex flex-col lg:flex-row gap-10 items-center justify-between font-sans relative">
-      {" "}
-      {/* Removed h-screen */}
+    <div className="flex flex-col lg:flex-row gap-10 items-center justify-between relative  md:px-20">
       <div className="w-full lg:w-1/2 relative z-10">
         <Swiper
           modules={[Navigation, Pagination]}
@@ -62,24 +51,15 @@ const PopularDirections = () => {
             bulletClass: "swiper-pagination-bullet",
             bulletActiveClass: "swiper-pagination-bullet-active",
           }}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
+          onSlideChange={(swiper) => {
+            setActiveIndex(swiper.activeIndex); // Обновляем состояние при изменении слайда
           }}
-          className=" overflow-hidden"
+          className="overflow-hidden"
         >
           {directions.map((dir, idx) => (
             <SwiperSlide key={idx}>
-              <div className="relative h-[380px] " style={{
-                    backgroundImage: "url(public/bg.png)",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    backgroundSize: "500px auto",
-                  }}>
-                {/* Обертка картинки и текста */}
-                <div
-                  className="relative overflow-hidden z-10 h-full"
-                 
-                >
+              <div className="relative h-[400px] w-auto">
+                <div className="relative overflow-hidden z-10 h-full">
                   <img
                     src={dir.image}
                     alt={`${dir.from} - ${dir.to}`}
@@ -98,33 +78,29 @@ const PopularDirections = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Пагинация точками
-        <div className="custom-pagination flex justify-center gap-2 absolute bottom-4 left-0 right-0 z-10 text-red-500"></div> */}
       </div>
+
       <div
-        className="w-full lg:w-1/2 text-center lg:text-left py-8 lg:py-0" // Added some vertical padding
+        className="w-full lg:w-1/2 text-center lg:text-left py-8 lg:py-0"
         style={{
           backgroundImage: "url(public/2.png)",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          backgroundSize: "60% auto", // Changed to 'contain' to see the whole image
+          backgroundSize: "65% auto",
         }}
       >
         <div className="text-2xl lg:text-5xl font-bold uppercase tracking-wide flex flex-col">
-          Популярные <span className="text-red-600">направления</span>
+          Популярные <span className="text-red-600">маршруты</span>
         </div>
         <div className="flex items-center justify-center lg:justify-between mt-4">
           <div className="flex flex-col items-center lg:items-start">
             <div className="text-3xl mt-4 font-semibold text-gray-800">
-              {directions[activeIndexRef.current]?.from} -{" "}
-              {directions[activeIndexRef.current]?.to}
+              {directions[activeIndex]?.from} - {directions[activeIndex]?.to}
             </div>
-            <div className="text-red-600 font-bold text-2xl  mt-2">
-              {directions[activeIndexRef.current]?.price}
+            <div className="text-red-600 font-bold text-2xl mt-2">
+              {directions[activeIndex]?.price}
             </div>
           </div>
-          {/* Кнопки навигации */}
           <div className="flex items-center gap-3 ml-4 lg:ml-8">
             <div className="swiper-prev cursor-pointer z-10 text-white bg-gray-600 hover:bg-gray-700 rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-colors">
               ❮
