@@ -1,4 +1,9 @@
-import { FaMapMarkerAlt, FaPhone, FaClock, FaExternalLinkAlt } from 'react-icons/fa';
+import {
+  FaMapMarkerAlt,
+  FaPhone,
+  FaClock,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 
 const MapSeaction = () => {
   // Координаты МУИТ
@@ -20,38 +25,39 @@ const MapSeaction = () => {
 
   return (
     <div className="relative h-screen w-full bg-gray-50 flex flex-col pb-20">
-    
-
- 
       <div className="flex-1 relative bg-gray-200">
         <div className="w-full h-full">
-            <img src="public/transition.png" className="rotate-180" />
-            <iframe
-                src={iframeSrc}
-                className="w-full h-full text-red-600"
-                style={{ border: 0, filter: "grayscale(80%) brightness(1.1) contrast(0.9)",   pointerEvents: "none"  }}
-                allowFullScreen
-                loading="lazy"
-                title="Карта МУИТ"
-            ></iframe>
-        
+          <img src="public/transition.png" className="rotate-180" />
+          <iframe
+            src={iframeSrc}
+            className="w-full h-full text-red-600"
+            style={{
+              border: 0,
+              filter: "grayscale(80%) brightness(1.1) contrast(0.9)",
+              pointerEvents: "none",
+            }}
+            allowFullScreen
+            loading="lazy"
+            title="Карта МУИТ"
+          ></iframe>
         </div>
 
         {/* Информационная панель */}
         <div className="absolute bottom-6 left-20 z-10 w-96 bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-5 border border-gray-200">
-
           <div className="space-y-3">
-          <h1 className="text-4xl uppercase font-bold flex flex-col ">
-                Наши
-                <span className="text-red-500">Контакты</span>
-                <span className=" border-b-2 w-20 mt-3"></span>
-              </h1>
+            <h1 className="text-4xl uppercase font-bold flex flex-col ">
+              Наши
+              <span className="text-red-500">Контакты</span>
+              <span className=" border-b-2 w-20 mt-3"></span>
+            </h1>
             <div className="flex items-start">
               <div className="text-red-500 mt-0.5 mr-3">
                 <FaMapMarkerAlt className="w-5 h-5" />
               </div>
               <div>
-                <p className="font-medium text-gray-800">ул. Манаса 34/1, Алматы</p>
+                <p className="font-medium text-gray-800">
+                  ул. Манаса 34/1, Алматы
+                </p>
                 <p className="text-sm text-gray-600">Главный корпус, 3 этаж</p>
               </div>
             </div>

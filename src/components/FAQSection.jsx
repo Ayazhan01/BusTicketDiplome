@@ -53,6 +53,7 @@ const FAQSection = () => {
         
             <h2 className="flex flex-col text-3xl md:text-5xl font-bold uppercase">
               Частые вопросы <span className="text-red-500">о междугородних автобусах</span>
+              <span className=" border-b-2 w-20 mt-3"></span>
             </h2>
             <p className="text-xl text-gray-600">
               Всё, что нужно знать о поездках по Казахстану на автобусе

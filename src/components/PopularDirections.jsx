@@ -91,6 +91,7 @@ const PopularDirections = () => {
       >
         <div className="text-2xl lg:text-5xl font-bold uppercase tracking-wide flex flex-col">
           Популярные <span className="text-red-600">маршруты</span>
+          <span className=" border-b-2 w-20 mt-3"></span>
         </div>
         <div className="flex items-center justify-center lg:justify-between mt-4">
           <div className="flex flex-col items-center lg:items-start">

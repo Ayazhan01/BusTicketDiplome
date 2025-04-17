@@ -28,6 +28,7 @@ const HomePage = () => {
             <IoTicketOutline />
             <span className="text-balck">АВТОБУСНЫЕ</span>
             <span className="text-red-500">БИЛЕТЫ</span>
+            <span className=" border-b-2 w-20 mt-3"></span>
           </h1>
 
           <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-gray-600">
