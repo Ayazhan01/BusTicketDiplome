@@ -13,7 +13,7 @@ const AboutPage = () => {
       name: "Yessen Bekbol",
       role: "Full-Stack разработка",
       icon: <FaCode className="text-3xl" />,
-      color: "bg-gray-100 text-gray-800"
+      color: "bg-gray-100 "
     },
     {
       name: "Ayazhan Marikova",
@@ -42,7 +42,7 @@ const AboutPage = () => {
           <div className="inline-flex items-center justify-center bg-red-100 text-red-600 rounded-full p-3 mb-4">
             <FaBus className="text-2xl" />
           </div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">АВТОБУСБИЛЕТ.KZ</h2>
+          <h2 className="text-5xl font-bold  mb-2 uppercase">АВТОБУС<span className='text-red-500'>БИЛЕТ.KZ</span></h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Наш сервис был создан в 2025 году с целью сделать покупку автобусных билетов 
             максимально простой и удобной для жителей Казахстана.
@@ -86,7 +86,7 @@ const AboutPage = () => {
             <div className="inline-flex items-center justify-center bg-red-100 text-red-600 rounded-full p-3 mb-4">
               <FaUsers className="text-2xl" />
             </div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Наша команда</h2>
+            <h2 className="text-5xl font-bold  mb-2 uppercase">Наша <span className='text-red-500'>команда</span></h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Профессионалы, создающие удобные и технологичные решения для ваших поездок
             </p>
@@ -131,7 +131,7 @@ const AboutPage = () => {
       {/* Наши ценности */}
       <section className=" px-4 md:px-20 py-16">
         <div className="bg-white rounded-xl shadow-md p-8 md:p-12">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Наши принципы</h2>
+          <h2 className="text-5xl font-bold text-center gap-3 mb-8 uppercase">Наши <span className='text-red-500'>принципы</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {

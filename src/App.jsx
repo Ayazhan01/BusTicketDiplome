@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
 import Home from "./pages/HomePage";
-import Booking from "./pages/Booking";
+import Booking from "./components/Booking";
 import Payment from "./pages/Payment";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
-import Terms from "./pages/Terms";
+import Terms from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import Register from "./components/Register";
