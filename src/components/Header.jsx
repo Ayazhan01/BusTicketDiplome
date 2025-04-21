@@ -213,7 +213,7 @@ const Header = () => {
             Контакты
           </Link>
           {/* <Link
-            to="/schedule"
+            to="/terms"
             className="text-gray-700 hover:text-red-500 transition-colors font-medium"
           >
             Расписание
