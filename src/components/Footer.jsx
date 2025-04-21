@@ -31,11 +31,11 @@ const Footer = () => {
               КЛИЕНТАМ
             </h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-red-600 transition">Как купить билет</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-red-600 transition">Правила перевозки</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-red-600 transition">Возврат билетов</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-red-600 transition">Частые вопросы</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-red-600 transition">Договор оферты</a></li>
+              <li><a href="/terms" className="text-gray-600 hover:text-red-600 transition">Условия использования</a></li>
+              <li><a href="/privacy" className="text-gray-600 hover:text-red-600 transition"></a></li>
+              <li><a href="/" className="text-gray-600 hover:text-red-600 transition">Возврат билетов</a></li>
+              <li><a href="/about" className="text-gray-600 hover:text-red-600 transition">О нас</a></li>
+              <li><a href="/contats" className="text-gray-600 hover:text-red-600 transition">Контакты</a></li>
             </ul>
           </div>
 
