@@ -6,7 +6,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 
-const FAQSection = () => {
+const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const faqs = [
@@ -44,7 +44,12 @@ const FAQSection = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-white  md:px-20" >
       <div className="flex flex-col md:flex-row gap-5" >
-        <div className="flex flex-col space-y-3 w-full items-start">
+        <div className="flex flex-col space-y-3 w-full items-start"    style={{
+          backgroundImage: "url(public/3.png)",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "80% auto",
+        }}>
         
             <h2 className="flex flex-col text-3xl md:text-5xl font-bold uppercase">
               Частые вопросы <span className="text-red-500">о междугородних автобусах</span>
@@ -108,4 +113,4 @@ const FAQSection = () => {
   );
 };
 
-export default FAQSection;
+export default FAQ;
