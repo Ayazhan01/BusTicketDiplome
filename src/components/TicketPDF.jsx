@@ -1,18 +1,18 @@
 
 import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
-// 1. Регистрируем шрифт (это должно быть ДО определения стилей и компонента)
+
 import { Font } from '@react-pdf/renderer';
 
 
 Font.register({
   family: 'Roboto',
   fonts: [
-    { src: '/fonts/Roboto-Regular.ttf' }, // обычный
-    { src: '/fonts/Roboto-Bold.ttf', fontWeight: 'bold' }, // жирный
+    { src: '/fonts/Roboto-Regular.ttf' }, 
+    { src: '/fonts/Roboto-Bold.ttf', fontWeight: 'bold' }, 
   ],
 });
 
-// 2. Затем идут стили (как у вас, но с добавлением fontFamily)
+
 const styles = StyleSheet.create({
   page: {
     fontFamily: 'Roboto', 

@@ -9,7 +9,7 @@ import Terms from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import Register from "./components/Register";
-import Login from "./components/Login"; // Add this import
+import Login from "./components/Login";
 import BookingPage from './components/BookingPage';
 
 
